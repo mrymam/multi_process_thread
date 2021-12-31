@@ -13,7 +13,7 @@
 
 void sortSingle(void *arg)
 {
-  long int numbers = (int *)arg;
+  int* numbers = (int *)arg;
   qsort(numbers, NUM_LENGTH, sizeof(int), isOver);
 }
 
@@ -33,4 +33,6 @@ int main() {
   printf("double %ld.%06d\n", t1.tv_sec, t1.tv_usec);
   // printf("printed from parent process %d\n", getpid());
   puts("-----------------");
+
+  return 0;
 }

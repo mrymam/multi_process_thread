@@ -55,8 +55,8 @@ int main(int argc, char *argv[])
     wait(NULL);
     gettimeofday(&t1, NULL);
     timersub(&t1, &t0, &t1);
-    printf("quad %ld.%06d\n", t1.tv_sec, t1.tv_usec);
-    printf("finish all Process\n");
+    printf("quad   %ld.%06d\n", t1.tv_sec, t1.tv_usec);
+    puts("-----------------");
   }
 
   return 0;

@@ -14,8 +14,8 @@
 
 void sortHalf(void *arg1)
 {
-  long int numbers = (int*)arg1;
-  qsort(numbers, HALF_NUM_LENGTH, sizeof(int), isOver);
+  int* numbers = (int*)arg1;
+  qsort(*numbers, HALF_NUM_LENGTH, sizeof(int), isOver);
 }
 
 int main() {

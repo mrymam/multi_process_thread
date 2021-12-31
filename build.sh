@@ -10,6 +10,22 @@
 # gcc quad.c -o quad
 # ./quad
 
-gcc -o out quick_sort_test.c sort.c
+echo "process\n"
+gcc -o out process/single.c sort.c
+./out
 
-gcc test.c -o test
+gcc -o out process/double.c sort.c
+./out
+
+gcc -o out process/quad.c sort.c
+./out
+
+echo "thread\n"
+
+gcc -o out thread/single.c sort.c
+
+# gcc -o out thread/double.c sort.c
+# ./out
+
+# gcc -o out thread/quad.c sort.c
+# ./out
