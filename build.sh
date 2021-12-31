@@ -10,7 +10,7 @@
 # gcc quad.c -o quad
 # ./quad
 
-echo "process\n"
+echo "[process]"
 gcc -o out process/single.c sort.c
 ./out
 
@@ -20,12 +20,15 @@ gcc -o out process/double.c sort.c
 gcc -o out process/quad.c sort.c
 ./out
 
-echo "thread\n"
+echo ""
+echo "[thread]"
+echo "-----------------"
 
-gcc -o out thread/single.c sort.c
+gcc -pthread -o out thread/single.c sort.c
+./out
 
-# gcc -o out thread/double.c sort.c
-# ./out
+gcc -pthread -o out thread/double.c sort.c
+./out
 
-# gcc -o out thread/quad.c sort.c
-# ./out
+gcc -pthread -o out thread/quad.c sort.c
+./out

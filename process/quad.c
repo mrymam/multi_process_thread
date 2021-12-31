@@ -8,8 +8,9 @@
 #include <errno.h>
 #include "../sort.h"
 
-#define NUM_LENGTH 400000
-#define QUAD_NUM_LENGTH 100000
+#define NUM_LENGTH 80000
+#define HALF_NUM_LENGTH 40000
+#define QUAD_NUM_LENGTH 20000
 
 int main(int argc, char *argv[])
 {
@@ -33,19 +34,23 @@ int main(int argc, char *argv[])
     pid = fork();
     if (pid == 0) {
       if (i == 0) {
-        qsort(numbers1, QUAD_NUM_LENGTH, sizeof(int), isOver);
+        // qsort(numbers1, QUAD_NUM_LENGTH, sizeof(int), isOver);
+        bubbleSort(numbers1, QUAD_NUM_LENGTH);
       }
       if (i == 1)
       {
-        qsort(numbers2, QUAD_NUM_LENGTH, sizeof(int), isOver);
+        // qsort(numbers2, QUAD_NUM_LENGTH, sizeof(int), isOver);
+        bubbleSort(numbers1, QUAD_NUM_LENGTH);
       }
       if (i == 2)
       {
-        qsort(numbers3, QUAD_NUM_LENGTH, sizeof(int), isOver);
+        // qsort(numbers3, QUAD_NUM_LENGTH, sizeof(int), isOver);
+        bubbleSort(numbers2, QUAD_NUM_LENGTH);
       }
       if (i == 3)
       {
-        qsort(numbers, QUAD_NUM_LENGTH, sizeof(int), isOver);
+        // qsort(numbers, QUAD_NUM_LENGTH, sizeof(int), isOver);
+        bubbleSort(numbers3, QUAD_NUM_LENGTH);
       }
       break;
     }

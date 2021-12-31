@@ -76,3 +76,19 @@ void randomNumnbers(int numbers[], int length) {
     numbers[i] = rand() % 100;
   }
 }
+
+void bubbleSort(int* numbers, int length) {
+  int tmp;
+  for (int i = 0; i < length; i++)
+  {
+    for (int j = i + 1; j < length; j++)
+    {
+      if (numbers[i] > numbers[j])
+      {
+        tmp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = tmp;
+      }
+    }
+  }
+}

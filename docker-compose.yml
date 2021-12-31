@@ -1,8 +1,8 @@
 version: '3'
 services:
-  experiment:
-    # image: 'gcc:1.2'
-    image: silkeh/clang
+  gcc-cpp-sample:
+    # image: 'gcc:9.2'
+    image: 'gcc'
     volumes:
       - .:/src/cpp
     working_dir: /src/cpp
@@ -10,7 +10,6 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4"
           # cpus: "1"
           # cpus: "2"
-          # cpus: "4"
+          cpus: "4"

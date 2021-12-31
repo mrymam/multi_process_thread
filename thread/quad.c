@@ -9,13 +9,15 @@
 #include <pthread.h>
 #include "../sort.h"
 
-#define NUM_LENGTH 400000
-#define HALF_NUM_LENGTH 200000
-#define QUAD_NUM_LENGTH 100000
+#define NUM_LENGTH 80000
+#define HALF_NUM_LENGTH 40000
+#define QUAD_NUM_LENGTH 20000
 
-void sortQuad(void *arg1) {
-  long int numbers = (int*)arg1;
-  qsort(numbers, QUAD_NUM_LENGTH, sizeof(int), isOver);
+void *sortQuad(void *arg1) {
+  int* numbers = (int*)arg1;
+  // qsort(numbers, QUAD_NUM_LENGTH, sizeof(int), isOver);
+
+  bubbleSort(numbers, QUAD_NUM_LENGTH);
 }
 
 int main() {
@@ -52,6 +54,6 @@ int main() {
 
   gettimeofday(&t1, NULL);
   timersub(&t1, &t0, &t1);
-  printf("quad %ld.%06d\n", t1.tv_sec, t1.tv_usec);
+  printf("quad   %ld.%06d\n", t1.tv_sec, t1.tv_usec);
   puts("-----------------");
 }
